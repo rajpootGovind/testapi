@@ -71,7 +71,7 @@ function App() {
 
     return (
       <div>
-        <h2>Selected Project Properties</h2>
+        <h2>Select Project Properties to add</h2>
         <table>
           <thead>
             <tr>
@@ -95,7 +95,9 @@ function App() {
                   <button onClick={() => handlePropertyAdd(property)}>Add</button>
                 </td>
               </tr>
-            ))}
+            )
+          
+            )}
           </tbody>
         </table>
       </div>
@@ -105,9 +107,11 @@ function App() {
   useEffect(() => {
     fetchProjects();
   }, []);
+ 
 
   return (
     <div className="App">
+    <p> <strong>Note </strong>:- Added properties of project will be listed below the properties table.</p>
       <select value={selectedProjectId} onChange={handleProjectChange}>
         <option value="">Select Project</option>
         {projects.map((project) => (
@@ -116,7 +120,7 @@ function App() {
           </option>
         ))}
       </select>
-
+     
       {renderProperties()}
     </div>
   );
