@@ -1,70 +1,14 @@
-# Getting Started with Create React App
+What we Built- We built a UI in which By the dropdown the project and select a project, we will get the properties and inside the properties by a add button we can add properties.
+Process- 
+Firstly we create a React app and install axios to create http request . 
+First Thing we create a dropdown for projects.So we create a fetchProject function and for state management we use useState. inside fetchProject Function we create a Get request of the Project API(which is given to us). we store the response of fetch projects and update the state.By this we get the Project data.
+Now by the use of map fuction we iterate the projects data and for creating a dropdown we use select tag inside select tag iterate projects by map we create options by project name & id.
+Now we are going to create - by click on project we can see the properties in tabular form.
+for this we create fetchProperties function. and passes a projectId . for this projectId we add a onChange Handler on select tag by this with the help of event object we get productId.
+after getting productId by axios we create a Get request with Properties api in which we pass productId params. and get the properties and update state by the selectedProperties.
+By the use of this selectedProperties we iterate by map and create a table by passing data like proprty.post_title,name,address,price,area. by this we get properties by clicking a project.
+Now by click on property we can Add property . for we create a submit Button alongwith the table and pass a onClick handler . this handler take a property and store it on a updatedproperties array by the use of rest operator. than we update the state by passing updatedProperties in setSelectionProperties .then we create a GET req by axios and passes selectedProjectId(mange the state of <option> element).then we passes this response to a fetchProperties function for re-fetch properties.  
+And The added property will be shown, below the all the properties.
+we also use isLoding for add a loader. and for error handling we use try-catch.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thank You.
