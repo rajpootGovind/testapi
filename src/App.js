@@ -47,7 +47,8 @@ function App() {
     // Update selectedProperties in state to reflect the addition
 
     // Example using local state update:
-    const updatedProperties = [...selectedProperties, property];
+    const updatedProperties = [ property];
+    alert("Property added below")
     setSelectedProperties(updatedProperties);
 
     // Example using API call (replace with actual API endpoint and data structure):
@@ -111,7 +112,7 @@ function App() {
 
   return (
     <div className="App">
-    <p> <strong>Note </strong>:- Added properties of project will be listed below the properties table.</p>
+    <p> <strong>Note </strong>:- Project with Connected property</p>
       <select value={selectedProjectId} onChange={handleProjectChange}>
         <option value="">Select Project</option>
         {projects.map((project) => (
