@@ -48,8 +48,9 @@ function App() {
 
     // Example using local state update:
     const updatedProperties = [ property];
-    alert("Property added below")
+    
     setSelectedProperties(updatedProperties);
+    alert("Property added below")
 
     // Example using API call (replace with actual API endpoint and data structure):
     axios.post(`https://propertify.onrender.com/api/projects/${selectedProjectId}/properties`, property)
